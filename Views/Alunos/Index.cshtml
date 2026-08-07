@@ -1,16 +1,25 @@
 @model IEnumerable<TechChallenge.Aluno>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Alunos";
 }
 
-<h1>Index</h1>
+<h1 class="text-center mb-4" style="color:#8A5A9E;">
+    👨‍🎓 Alunos
+</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create"
+       class="btn"
+       style="background-color:#F8C8DC; color:white;">
+        ➕ Novo Aluno
+    </a>
 </p>
-<table class="table">
-    <thead>
+
+<table class="table table-hover table-bordered shadow">
+
+    <thead style="background-color:#D8B4F8; color:white;">
+
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Nome)
@@ -30,36 +39,69 @@
             <th>
                 @Html.DisplayNameFor(model => model.Ativo)
             </th>
-            <th></th>
+            <th>Ações</th>
         </tr>
+
     </thead>
+
     <tbody>
-@foreach (var item in Model) {
+
+@foreach (var item in Model)
+{
         <tr>
+
             <td>
                 @Html.DisplayFor(modelItem => item.Nome)
             </td>
+
             <td>
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
+
             <td>
                 @Html.DisplayFor(modelItem => item.Telefone)
             </td>
+
             <td>
                 @Html.DisplayFor(modelItem => item.DataNascimento)
             </td>
+
             <td>
                 @Html.DisplayFor(modelItem => item.DataCadastro)
             </td>
+
             <td>
                 @Html.DisplayFor(modelItem => item.Ativo)
             </td>
+
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+
+                <a asp-action="Edit"
+                   asp-route-id="@item.Id"
+                   class="btn btn-sm"
+                   style="background-color:#A8D8F0; color:white;">
+                    ✏️ Editar
+                </a>
+
+                <a asp-action="Details"
+                   asp-route-id="@item.Id"
+                   class="btn btn-sm"
+                   style="background-color:#B7E4C7; color:white;">
+                    👁 Detalhes
+                </a>
+
+                <a asp-action="Delete"
+                   asp-route-id="@item.Id"
+                   class="btn btn-sm"
+                   style="background-color:#F8C8DC; color:white;">
+                    🗑 Excluir
+                </a>
+
             </td>
+
         </tr>
 }
+
     </tbody>
+
 </table>

@@ -1,19 +1,104 @@
 ﻿@{
     ViewData["Title"] = "TechChallenge";
-    var teste = "Ola, bem vindo";
+    var teste = "Olá, bem-vindo!";
 }
 
-<div class="container text-center mt-5">
-    <h1 class="display-4 fw-bold">@teste</h1>
-    <p class="lead text-muted">Plataforma de Projetos e Inovação Estudantil</p>
+<div class="text-center mt-5">
 
-    <hr class="my-4"/>
+    <h1 style="color:#8A5A9E; font-weight:bold;">
+        💡 @teste
+    </h1>
 
-    <p class="fs-5">O lugar onde suas ideias viram projetos reais</p>
+    <p class="fs-4 text-muted">
+        Ao <strong>TechChallenge</strong>
+    </p>
 
-    <ul class="list-unstyled mt-4 fs-5">
-        <li>✅ Crie equipes e projetos</li>
-        <li>✅ Participe de desafios</li>
-        <li>✅ Ganhe pontos e suba no ranking</li>
-    </ul>
+    <hr class="my-4" style="border-color:#D8B4F8;" />
+
+    <p class="fs-5">
+        O lugar onde suas ideias viram projetos reais.
+    </p>
+
+</div>
+
+<div class="row mt-5">
+
+    <div class="col-md-4 mb-3">
+        <div class="card shadow border-0 h-100">
+
+            <div class="card-body text-center">
+
+                <h3>👥</h3>
+
+                <h5 style="color:#8A5A9E;">
+                    Equipes
+                </h5>
+
+                <p>
+                    Crie equipes para desenvolver projetos em conjunto.
+                </p>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+        <div class="card shadow border-0 h-100">
+
+            <div class="card-body text-center">
+
+                <h3>🚀</h3>
+
+                <h5 style="color:#A8D8F0;">
+                    Projetos
+                </h5>
+
+                <p>
+                    Desenvolva projetos inovadores e coloque suas ideias em prática.
+                </p>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+        <div class="card shadow border-0 h-100">
+
+            <div class="card-body text-center">
+
+                <h3>🏆</h3>
+
+                <h5 style="color:#B7E4C7;">
+                    Desafios
+                </h5>
+
+                <p>
+                    Participe de desafios, conquiste pontos e evolua no ranking.
+                </p>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="text-center mt-5">
+
+    <a asp-controller="Projetos"
+       asp-action="Index"
+       class="btn"
+       style="background-color:#D8B4F8; color:white;">
+        Ver Projetos
+    </a>
+
+    <a asp-controller="Equipes"
+       asp-action="Index"
+       class="btn"
+       style="background-color:#F8C8DC; color:white;">
+        Ver Equipes
+    </a>
+
 </div>

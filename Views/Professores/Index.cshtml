@@ -4,56 +4,142 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<div style="
+    background-color:#F5F1E8;
+    min-height:100vh;
+    padding:30px;
+">
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Especialidade)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DataContratacao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Ativo)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Especialidade)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataContratacao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ativo)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <h1 style="color:#D8B4F8;">
+        Index
+    </h1>
+
+    <p>
+        <a asp-action="Create"
+           class="btn"
+           style="
+           background-color:#F8C8DC;
+           color:#333;
+           border:none;
+           border-radius:10px;
+           font-weight:bold;
+           padding:10px 20px;
+           ">
+            Create New
+        </a>
+    </p>
+
+    <div style="
+        background-color:white;
+        padding:20px;
+        border-radius:15px;
+        box-shadow:0 4px 10px rgba(0,0,0,0.1);
+        border-top:6px solid #A8D8F0;
+    ">
+
+        <table class="table">
+
+            <thead style="background-color:#D8B4F8;">
+
+                <tr>
+
+                    <th style="color:white;">
+                        @Html.DisplayNameFor(model => model.Nome)
+                    </th>
+
+                    <th style="color:white;">
+                        @Html.DisplayNameFor(model => model.Email)
+                    </th>
+
+                    <th style="color:white;">
+                        @Html.DisplayNameFor(model => model.Especialidade)
+                    </th>
+
+                    <th style="color:white;">
+                        @Html.DisplayNameFor(model => model.DataContratacao)
+                    </th>
+
+                    <th style="color:white;">
+                        @Html.DisplayNameFor(model => model.Ativo)
+                    </th>
+
+                    <th style="color:white;"></th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Especialidade)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DataContratacao)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Ativo)
+                    </td>
+
+                    <td>
+
+                        <a asp-action="Edit"
+                           asp-route-id="@item.Id"
+                           style="
+                           color:#B7E4C7;
+                           font-weight:bold;
+                           text-decoration:none;
+                           ">
+                            Edit
+                        </a>
+
+                        <span style="color:#F8C8DC;"> | </span>
+
+                        <a asp-action="Details"
+                           asp-route-id="@item.Id"
+                           style="
+                           color:#A8D8F0;
+                           font-weight:bold;
+                           text-decoration:none;
+                           ">
+                            Details
+                        </a>
+
+                        <span style="color:#F8C8DC;"> | </span>
+
+                        <a asp-action="Delete"
+                           asp-route-id="@item.Id"
+                           style="
+                           color:#D8B4F8;
+                           font-weight:bold;
+                           text-decoration:none;
+                           ">
+                            Delete
+                        </a>
+
+                    </td>
+
+                </tr>
+            }
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

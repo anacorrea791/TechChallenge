@@ -29,3 +29,94 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+
+body {
+    background-color: #F5F1E8;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.navbar{
+    background-color:#FFFFFF !important;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+}
+
+.navbar-brand{
+    color:#8A5A9E !important;
+    font-weight:bold;
+    font-size:25px;
+}
+
+.nav-link{
+    color:#555 !important;
+    font-weight:500;
+}
+
+.nav-link:hover{
+    color:#D98CB3 !important;
+}
+
+.card{
+    border:none;
+    border-radius:18px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.card-header{
+    border-radius:18px 18px 0 0 !important;
+}
+
+.btn-rosa{
+    background:#F8C8DC;
+    color:#fff;
+    border:none;
+}
+
+.btn-rosa:hover{
+    background:#F4AFCB;
+}
+
+.btn-verde{
+    background:#B7E4C7;
+    color:#fff;
+    border:none;
+}
+
+.btn-verde:hover{
+    background:#95D5B2;
+}
+
+.btn-azul{
+    background:#A8D8F0;
+    color:white;
+    border:none;
+}
+
+.btn-azul:hover{
+    background:#7CC6EC;
+}
+
+.btn-roxo{
+    background:#D8B4F8;
+    color:white;
+    border:none;
+}
+
+.btn-roxo:hover{
+    background:#C084FC;
+}
+
+.form-control{
+    border-radius:12px;
+}
+
+.form-control:focus{
+    border-color:#D8B4F8;
+    box-shadow:0 0 8px rgba(216,180,248,.5);
+}
+
+.footer{
+    background:#FFFFFF;
+    padding:15px;
+    margin-top:40px;
+    border-top:1px solid #ddd;
+}

@@ -1,59 +1,83 @@
 @model TechChallenge.Aluno
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar Aluno";
 }
 
-<h1>Edit</h1>
+<h1 class="text-center mb-4" style="color:#8A5A9E;">
+    ✏️ Editar Aluno
+</h1>
 
-<h4>Aluno</h4>
+<h4 style="color:#8A5A9E;">Alterar informações do aluno</h4>
 <hr />
+
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+
+        <form asp-action="Edit" class="shadow rounded p-4" style="background-color:white;">
+
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
             <input type="hidden" asp-for="Id" />
-            <div class="form-group">
+
+            <div class="form-group mb-3">
                 <label asp-for="Nome" class="control-label"></label>
                 <input asp-for="Nome" class="form-control" />
                 <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
-            <div class="form-group">
+
+            <div class="form-group mb-3">
                 <label asp-for="Email" class="control-label"></label>
                 <input asp-for="Email" class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
-            <div class="form-group">
+
+            <div class="form-group mb-3">
                 <label asp-for="Telefone" class="control-label"></label>
                 <input asp-for="Telefone" class="form-control" />
                 <span asp-validation-for="Telefone" class="text-danger"></span>
             </div>
-            <div class="form-group">
+
+            <div class="form-group mb-3">
                 <label asp-for="DataNascimento" class="control-label"></label>
                 <input asp-for="DataNascimento" class="form-control" />
                 <span asp-validation-for="DataNascimento" class="text-danger"></span>
             </div>
-            <div class="form-group">
+
+            <div class="form-group mb-3">
                 <label asp-for="DataCadastro" class="control-label"></label>
                 <input asp-for="DataCadastro" class="form-control" />
                 <span asp-validation-for="DataCadastro" class="text-danger"></span>
             </div>
-            <div class="form-group form-check">
+
+            <div class="form-group form-check mb-4">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Ativo" /> @Html.DisplayNameFor(model => model.Ativo)
+                    <input class="form-check-input" asp-for="Ativo" />
+                    @Html.DisplayNameFor(model => model.Ativo)
                 </label>
             </div>
+
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit"
+                       value="Salvar Alterações"
+                       class="btn"
+                       style="background-color:#A8D8F0; color:white;" />
+
+                <a asp-action="Index"
+                   class="btn"
+                   style="background-color:#F8C8DC; color:white;">
+                    ⬅ Voltar
+                </a>
+
             </div>
+
         </form>
+
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
