@@ -6,11 +6,45 @@
     <span>Ola, @User.Identity?.Name!</span>
     <form asp-action="Logout" method="post">
         @Html.AntiForgeryToken()
-        <button type="submit">Sair</button>
+        <button type="submit"
+                style="
+                background-color:#F8C8DC;
+                border:none;
+                border-radius:10px;
+                padding:8px 15px;
+                color:#333;
+                font-weight:bold;
+                ">
+            Sair
+        </button>
     </form>
 }
 else
 {
-    <a asp-controller="Account" asp-action="Register">Cadastro </a>
-    <a asp-controller="Account" asp-action="Login"> Entrar</a>
+    <a asp-controller="Account"
+       asp-action="Register"
+       style="
+       background-color:#F8C8DC;
+       color:#333;
+       padding:8px 15px;
+       border-radius:10px;
+       text-decoration:none;
+       font-weight:bold;
+       margin-right:5px;
+       ">
+        Cadastro
+    </a>
+
+    <a asp-controller="Account"
+       asp-action="Login"
+       style="
+       background-color:#A8D8F0;
+       color:#333;
+       padding:8px 15px;
+       border-radius:10px;
+       text-decoration:none;
+       font-weight:bold;
+       ">
+        Entrar
+    </a>
 }

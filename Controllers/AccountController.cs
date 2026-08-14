@@ -156,10 +156,6 @@ public class AccountController : Controller
 
         return RedirectToAction("Index","Tech");
     }
-
-
-
-
     // =====================================
     // GET: /Account/AccessDenied
     // Usuário sem permissão
