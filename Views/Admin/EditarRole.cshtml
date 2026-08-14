@@ -1,0 +1,49 @@
+@model Microsoft.AspNetCore.Identity.IdentityRole
+
+@{
+    ViewData["Title"] = "Editar Role";
+}
+
+<div class="container mt-4">
+
+    <h2>Editar Role</h2>
+
+    <form asp-action="EditarRole"
+          asp-controller="Admin"
+          method="post">
+
+        <input type="hidden"
+               name="id"
+               value="@Model.Id" />
+
+        <div asp-validation-summary="All"
+             class="text-danger mb-3"></div>
+
+        <div class="mb-3">
+
+            <label class="form-label">
+                Nome da Role
+            </label>
+
+            <input type="text"
+                   name="nome"
+                   value="@Model.Name"
+                   class="form-control"
+                   required />
+
+        </div>
+
+        <button type="submit"
+                class="btn btn-primary">
+            Salvar Alterações
+        </button>
+
+        <a asp-action="Roles"
+           asp-controller="Admin"
+           class="btn btn-secondary">
+            Voltar
+        </a>
+
+    </form>
+
+</div>

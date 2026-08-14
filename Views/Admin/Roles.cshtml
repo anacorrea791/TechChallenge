@@ -1,0 +1,71 @@
+@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityRole>
+
+@{
+    ViewData["Title"] = "Gerenciamento de Roles";
+}
+
+<div class="container mt-4">
+
+    <h1>Gerenciamento de Roles</h1>
+
+    <a asp-action="CriarRole"
+       asp-controller="Admin"
+       class="btn btn-success mb-3">
+        + Nova Role
+    </a>
+   
+    <div class="table-responsive">
+
+        <table class="table">
+
+            <thead>
+                <tr>
+                    <th>Nome da Role</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                @if (Model.Any())
+                {
+                    foreach (var role in Model)
+                    {
+                        <tr>
+                            <td>
+                                @role.Name
+                            </td>
+
+                            <td>
+                                <a asp-action="EditarRole"
+                                   asp-route-id="@role.Id"
+                                   class="btn btn-primary btn-sm">
+                                    Editar
+                                </a>
+
+                                <a asp-action="ExcluirRole"
+                                   asp-route-id="@role.Id"
+                                   class="btn btn-danger btn-sm"
+                                   onclick="return confirm('Tem certeza que deseja excluir esta Role?');">
+                                    Excluir
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="2" class="text-center">
+                            Nenhuma Role cadastrada.
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

@@ -1,0 +1,63 @@
+@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityUser>
+@{
+    ViewData["Title"] = "Cadastro de Usuários";
+    var rolesUsuario = ViewBag.RolesUsuarios as Dictionary<string,string>;
+}
+
+<div class="container mt-4">
+    <a asp-action="CriarUsuario" class="btn btn-primary">
+        Novo Usuário
+    </a>
+    <div class="table-reponsive">
+        <table>
+            <thead>
+                <tr>
+                    <th>E-mail</th>
+                    <th>Perfil</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if(Model.Any()){
+                    foreach(var usuario in Model){
+                        <tr>
+                            <td>
+                                @usuario.Email
+                            </td>
+                            <td>
+                                @if(rolesUsuario != null){
+                                    foreach(var role in rolesUsuario){
+                                        @if(usuario.Id == role.Key.ToString())
+                                        {
+                                        <span class="badge bg-primary">
+                                            @role.Value
+                                        </span>
+                                        }
+                                    }
+                                }else{
+                                    <span class="badge bg-secondary">
+                                        Sem Perfil
+                                    </span>
+                                }
+                            </td>
+                            <td>
+                                <a asp-action="EditarUsuario" asp-route-id="@usuario.Id">Editar</a> |
+                                <a asp-action="TornarAdmin" asp-route-id="@usuario.Id">Tornar Admin</a> |
+                                 <a asp-action="TrocarPerfil" asp-route-id="@usuario.Id">Trocar Perfil</a> |
+                                <a asp-action="ExcluirUsuario" asp-route-id="@usuario.Id">Excluir</a> |
+                            </td>
+                        </tr>
+                    }
+                }else{
+                    <tr>
+                        <td colspan="3" class="text-center py-4">
+                                Nenhum Usuário Cadastrado.
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+</div>

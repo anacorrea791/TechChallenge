@@ -4,7 +4,7 @@
 @if (SignInManager.IsSignedIn(User))
 {
     <span>Ola, @User.Identity?.Name!</span>
-    <form asp-action="Logout" method="post">
+    <form asp-controller="Account" asp-action="Logout" method="post">
         @Html.AntiForgeryToken()
         <button type="submit"
                 style="

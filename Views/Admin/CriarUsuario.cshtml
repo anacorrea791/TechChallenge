@@ -1,0 +1,61 @@
+@{
+    ViewData["Title"] = "Criar Usuário";
+    var rolesDisponiveis = ViewBag.RolesDisponiveis as List<Microsoft.AspNetCore.Identity.IdentityRole>;
+}
+
+<div class="container mt-4">
+
+    <h2>Criar Usuário</h2>
+
+    <form asp-action="CriarUsuario" asp-controller="Admin" method="post">
+
+        <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+        <div class="mb-3">
+            <label class="form-label">E-mail</label>
+            <input type="email"
+                   name="email"
+                   class="form-control"
+                   required />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Senha</label>
+            <input type="password"
+                   name="senha"
+                   class="form-control"
+                   required />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Perfil</label>
+
+            <select name="role" class="form-control">
+
+                <option value="">Selecione um perfil</option>
+
+                @if (rolesDisponiveis != null)
+                   {
+                     foreach (var role in rolesDisponiveis)
+                   {
+                       <option value="@role.Name">
+                         @role.Name
+                       </option>
+    }
+}
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-success">
+            Criar Usuário
+        </button>
+
+        <a asp-action="Usuarios"
+           asp-controller="Admin"
+           class="btn btn-secondary">
+            Voltar
+        </a>
+
+    </form>
+
+</div>

@@ -10,7 +10,7 @@ using TechChallenge;
 
 namespace TechChallenge.Controllers
 {
-
+[Authorize(Roles = "Professor, Admin")]
     public class CategoriasController : Controller
     {
         private readonly AppDbContext _context;

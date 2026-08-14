@@ -1,0 +1,42 @@
+@{
+    ViewData["Title"] = "Criar Role";
+}
+
+<div class="container mt-4">
+
+    <h2>Criar Role</h2>
+
+    <form asp-action="CriarRole"
+          asp-controller="Admin"
+          method="post">
+
+        <div asp-validation-summary="All"
+             class="text-danger mb-3"></div>
+
+        <div class="mb-3">
+
+            <label class="form-label">
+                Nome da Role
+            </label>
+
+            <input type="text"
+                   name="nome"
+                   class="form-control"
+                   required />
+
+        </div>
+
+        <button type="submit"
+                class="btn btn-success">
+            Criar Role
+        </button>
+
+        <a asp-action="Roles"
+           asp-controller="Admin"
+           class="btn btn-secondary">
+            Voltar
+        </a>
+
+    </form>
+
+</div>

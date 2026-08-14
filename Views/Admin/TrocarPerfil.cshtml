@@ -1,0 +1,19 @@
+ @model Microsoft.AspNetCore.Identity.IdentityUser
+@{
+    ViewData["Title"] = "Trocar Perfil do Usuário";
+    var rolesDisponiveis = ViewBag.RolesDisponiveis as List<Microsoft.AspNetCore.Identity.IdentityRole>;
+}
+
+<form method="post" asp-action="TrocarPerfil" asp-controller="Admin">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <div class="form-group">
+        <label for="role">Selecione o novo perfil:</label>
+        <select class="form-control" id="role" name="role">
+            @foreach (var role in rolesDisponiveis)
+            {
+                <option value="@role.Name">@role.Name</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Trocar Perfil</button>
+</form>
